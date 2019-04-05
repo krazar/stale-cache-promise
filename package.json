@@ -1,0 +1,46 @@
+{
+  "name": "stale-cache-promise",
+  "version": "0.1.1",
+  "description": "Cache with stale while revalidating",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly" : "npm test && npm run lint",
+    "prepare" : "npm run build",
+    "preversion" : "npm run lint",
+    "postversion" : "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krazar/stale-cache-promise.git"
+  },
+  "keywords": [
+    "cache",
+    "stale",
+    "promise",
+    "reload",
+    "revalidate"
+  ],
+  "author": "Pierre Marot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krazar/stale-cache-promise/issues"
+  },
+  "homepage": "https://github.com/krazar/stale-cache-promise#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "jest": "^24.7.1",
+    "prettier": "^1.16.4",
+    "ts-jest": "^24.0.1",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.1"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
